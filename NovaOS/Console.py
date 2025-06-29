@@ -1,4 +1,4 @@
-from main import *
+from Settings import *
 
 console_input = input("> ")
 print("NovaOS")

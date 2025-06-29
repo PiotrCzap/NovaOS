@@ -4,8 +4,6 @@ import sys
 import time
 import Console
 
-system_version = "1.0"
-
 def main():
     os.system("cls")
     print("_")
@@ -18,7 +16,7 @@ def main():
     time.sleep(0.5)
     os.system("cls")
     print("")
-    time.sleep(0.5)
+    time.sleep(3)
     Console
 
 

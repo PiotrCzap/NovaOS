@@ -5,17 +5,6 @@ import time
 import Console
 
 def main():
-    os.system("cls")
-    print("_")
-    time.sleep(0.5)
-    os.system("cls")
-    print("")
-    time.sleep(0.5)
-    os.system("cls")
-    print("_")
-    time.sleep(0.5)
-    os.system("cls")
-    print("")
     time.sleep(3)
     Console
 

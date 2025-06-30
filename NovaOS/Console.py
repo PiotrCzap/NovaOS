@@ -1,7 +1,6 @@
 from Settings import *
 import psutil
 import platform
-import GPUtil
 
 console_input = input("> ")
 print("NovaOS")

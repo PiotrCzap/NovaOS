@@ -8,13 +8,22 @@ root = ctk.CTk()
 root.geometry("1920x1080+0+0")
 root.title()
 root.attributes("-fullscreen", True)
-task_bar_canvas = ctk.CTkCanvas(root, width=1920, height=25, bg="gray", highlightthickness=0)
+task_bar_canvas = ctk.CTkCanvas(root, width=1920, height=28, bg="gray", highlightthickness=0)
 task_bar_canvas.pack(pady=1)
 
-#start_menu_image = ctk.CTkImage(
-#    dark_image=Image.open
-#)
+start_menu_image = ctk.CTkImage(
+    dark_image=Image.open("icons\Start menu icon.png")
+)
 
-start_menu_button = ctk.CTkButton
+start_menu_button = ctk.CTkButton(
+    master=root,
+    text="",
+    image=start_menu_image,
+    width=5,
+    height=5,
+    command=lambda: print("click")
+)
+
+start_menu_button.place(x=0, y=1)
 
 root.mainloop()

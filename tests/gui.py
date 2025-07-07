@@ -4,6 +4,8 @@ from PIL import Image
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
+system_font = "Arial"
+
 root = ctk.CTk()
 root.geometry("1920x1080+0+0")
 root.title()
@@ -25,8 +27,35 @@ start_menu_button = ctk.CTkButton(
     image=start_menu_image,
     width=5,
     height=5,
-    command=lambda: print("click")
+    command=lambda: Start_menu()
 )
+
+def Start_menu():
+    settings_icon = ctk.CTkImage(dark_image=Image.open("icons\Settings icon.png"), size=(20, 20))
+    settings_panel_button = ctk.CTkButton(
+        master=root,
+        text="Settings",
+        font=(system_font, 20),
+        compound="left",
+        image=settings_icon,
+        width=200,
+        height=30,
+    )
+    settings_panel_button.place(x=0, y=30)
+
+def Power_menu():
+    power_icon = ctk.CTkImage(dark_image=Image.open("icons\Power Menu icon.png"), size=(20, 20))
+    power_menu_panel_button = ctk.CTkButton(
+        master=root,
+        text="Power",
+        font=(system_font, 20),
+        compound="left",
+        image=power_icon,
+        width=200,
+        height=30,
+        command= lambda: root.destroy()
+    )
+    power_menu_panel_button.place(x=1720, y=30)
 
 power_menu_button = ctk.CTkButton(
     master=root,
@@ -34,7 +63,7 @@ power_menu_button = ctk.CTkButton(
     image=power_menu_image,
     width=5,
     height=5,
-    command=lambda: print("power")
+    command=lambda: Power_menu()
 )
 
 start_menu_button.place(x=0, y=1)

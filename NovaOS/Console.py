@@ -3,17 +3,24 @@ import psutil
 import platform
 import os
 import shutil
+import time
 
 console_input = input("> ")
+nvo_packages = {
+    "games-console"
+}
 
 def help_command():
     print("help - all system commands")
     print("ver - system version")
     print("about - all system info")
     print("mktxt - making txt file")
+    print("nvo.install [any package] - packages installer")
+    return
 
 def ver_command():
     print(system_version)
+    return
 
 def mktxt_command():
     print("ENTER FILE NAME")
@@ -22,6 +29,7 @@ def mktxt_command():
     with open(txt_file_name, "w") as txt_file:
         txt_file.write("")
         shutil.move("Desktop")
+        return
 
 
 def about_command():
@@ -43,3 +51,28 @@ if console_input == "about":
 if console_input == "mktxt":
     mktxt_command()
 
+if console_input == "nvo.install":
+    print("nvo.install [package-name]")
+
+if console_input == "nvo.install games-console":
+    print("Collecting Package [0%]")
+    time.sleep(0.5)
+    print("Collecting Package [25%]")
+    time.sleep(1)
+    print("Collecting Package [50%]")
+    time.sleep(1.5)
+    print("Collecting Package [75%]")
+    time.sleep(2)
+    print("Collecting Package [100%]")
+    time.sleep(1)
+    print("Installing games-console.console [0%]")
+    time.sleep(1)
+    print("Installing games-console.console [30%]")
+    time.sleep(1.5)
+    print("Installing games-console.console [70%]")
+    time.sleep(2)
+    print("Installing games-console.console [100%]")
+    time.sleep(1)
+    print("Install Complete")
+    time.sleep(1)
+    os.system("cls")

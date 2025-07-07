@@ -15,6 +15,10 @@ start_menu_image = ctk.CTkImage(
     dark_image=Image.open("icons\Start menu icon.png")
 )
 
+power_menu_image = ctk.CTkImage(
+    dark_image=Image.open("icons\Power Menu icon.png")
+)
+
 start_menu_button = ctk.CTkButton(
     master=root,
     text="",
@@ -24,6 +28,16 @@ start_menu_button = ctk.CTkButton(
     command=lambda: print("click")
 )
 
+power_menu_button = ctk.CTkButton(
+    master=root,
+    text="",
+    image=power_menu_image,
+    width=5,
+    height=5,
+    command=lambda: print("power")
+)
+
 start_menu_button.place(x=0, y=1)
+power_menu_button.place(x=1892, y=1)
 
 root.mainloop()

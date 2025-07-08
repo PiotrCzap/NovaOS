@@ -13,15 +13,15 @@ root.attributes("-fullscreen", True)
 task_bar_canvas = ctk.CTkCanvas(root, width=1920, height=28, bg="gray", highlightthickness=0)
 task_bar_canvas.pack(pady=1)
 
-start_menu_image = ctk.CTkImage(
-    dark_image=Image.open("icons\Start menu icon.png")
-)
+# Desktop Taskbar Icon Images
 
-power_menu_image = ctk.CTkImage(
-    dark_image=Image.open("icons\Power Menu icon.png")
-)
+start_menu_image = ctk.CTkImage(dark_image=Image.open("icons\Start menu icon.png"))
+power_menu_image = ctk.CTkImage(dark_image=Image.open("icons\Power Menu icon.png"))
+
+# Start Menu
 
 start_menu_button = ctk.CTkButton(
+    
     master=root,
     text="",
     image=start_menu_image,
@@ -29,6 +29,10 @@ start_menu_button = ctk.CTkButton(
     height=5,
     command=lambda: Settings_menu()
 )
+start_menu_button.place(x=0, y=1)
+
+
+# Settings Menu
 
 def Settings_menu():
     settings_icon = ctk.CTkImage(dark_image=Image.open("icons\Settings icon.png"), size=(20, 20))
@@ -44,6 +48,24 @@ def Settings_menu():
     )
     settings_panel_button.place(x=0, y=30)
 
+def Settings_panel():
+    Settings_window = ctk.CTkFrame(root, width=800, height=600, fg_color="black")
+    Settings_window_tilebar = ctk.CTkFrame(Settings_window, width=800, height=30, bg_color="gray", corner_radius=0)
+    Settings_window_tilebar_title = ctk.CTkLabel(Settings_window_tilebar, text= "Settings")
+    Settings_window_tilebar_close_button = ctk.CTkButton(
+        master=Settings_window_tilebar,
+        text="X", fg_color="red", bg_color="red", border_color="red",
+        width=10,
+        height=10,
+        command= Settings_window.destroy
+    )
+    Settings_window.place(x=200, y=200)
+    Settings_window_tilebar.place(x=0, y=0)
+    Settings_window_tilebar_close_button.place(x=775 , y=5)
+    Settings_window_tilebar_title.place(x= 0, y=0)
+
+# Power Menu
+
 def Power_menu():
     power_icon = ctk.CTkImage(dark_image=Image.open("icons\Power Menu icon.png"), size=(20, 20))
     power_menu_panel_button = ctk.CTkButton(
@@ -57,6 +79,7 @@ def Power_menu():
         command= lambda: root.destroy()
     )
     power_menu_panel_button.place(x=1720, y=30)
+    
 
 power_menu_button = ctk.CTkButton(
     master=root,
@@ -67,39 +90,6 @@ power_menu_button = ctk.CTkButton(
     command=lambda: Power_menu()
 )
 
-def Settings_panel():
-    Settings_window = ctk.CTkFrame(root, width=800, height=600, fg_color="black")
-    Settings_window_appearance_category_button = ctk.CTkButton(
-        master=root,
-        text="Appearance",
-        width=20,
-        height=20
-    )
-    Settings_window_appearance_category_button.place()
-
-    drag_data = {"x": 0, "y": 0}
-
-    def on_start_drag(event):
-        drag_data["x"] = event.x
-        drag_data["y"] = event.y
-
-    def on_drag(event):
-        new_x = Settings_window.winfo_x() + (event.x - drag_data["x"])
-        new_y = Settings_window.winfo_y() + (event.y - drag_data["y"])
-        Settings_window.place(x=new_x, y=new_y)
-
-    Settings_appearance = ctk.CTkButton(
-        master=Settings_window,
-        text="elo",
-        width=20,
-        height=20
-    )
-    Settings_window.bind("<Button-1>", on_start_drag)
-    Settings_window.bind("<B1-Motion>", on_drag)
-    Settings_window.place(x=200, y=200)
-
-
-start_menu_button.place(x=0, y=1)
 power_menu_button.place(x=1892, y=1)
 
 root.mainloop()

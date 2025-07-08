@@ -70,7 +70,7 @@ power_menu_button = ctk.CTkButton(
 def Settings_panel():
     Settings_window = ctk.CTkFrame(root, width=800, height=600, fg_color="black")
     Settings_window_appearance_category_button = ctk.CTkButton(
-        master=Settings_window,
+        master=root,
         text="Appearance",
         width=20,
         height=20

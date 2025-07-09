@@ -81,7 +81,7 @@ def Settings_panel():
     Settings_window.place(x=200, y=200)
     Settings_window_tilebar.place(x=0, y=0)
     Settings_window_tilebar_close_button.place(x=775 , y=5)
-    Settings_window_tilebar_title.place(x= 0, y=0)
+    Settings_window_tilebar_title.place(x=5, y=1)
     Settings_options_panel.place(x=0, y=30)
     Settings_window_tilebar.bind("<Button-1>", start_move)
     Settings_window_tilebar.bind("<ButtonRelease-1>", stop_move)

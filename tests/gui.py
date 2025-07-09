@@ -35,6 +35,7 @@ start_menu_button.place(x=0, y=1)
 # Settings Menu
 
 def Settings_menu():
+    
     settings_icon = ctk.CTkImage(dark_image=Image.open("icons\Settings icon.png"), size=(20, 20))
     settings_panel_button = ctk.CTkButton(
         master=root,
@@ -49,6 +50,21 @@ def Settings_menu():
     settings_panel_button.place(x=0, y=30)
 
 def Settings_panel():
+
+    def start_move(event):
+        Settings_window.startX = event.x
+        Settings_window.startY = event.y
+
+    def stop_move(event):
+        Settings_window.startX = None
+        Settings_window.startY = None
+
+    def on_motion(event):
+        x = Settings_window.winfo_x() - Settings_window.startX + event.x
+        y = Settings_window.winfo_y() - Settings_window.startY + event.y
+        Settings_window.place(x=x, y=y)
+
+
     Settings_window = ctk.CTkFrame(root, width=800, height=600, fg_color="black")
     Settings_window_tilebar = ctk.CTkFrame(Settings_window, width=800, height=30, bg_color="gray", corner_radius=0)
     Settings_window_tilebar_title = ctk.CTkLabel(Settings_window_tilebar, text= "Settings")
@@ -63,6 +79,9 @@ def Settings_panel():
     Settings_window_tilebar.place(x=0, y=0)
     Settings_window_tilebar_close_button.place(x=775 , y=5)
     Settings_window_tilebar_title.place(x= 0, y=0)
+    Settings_window_tilebar.bind("<Button-1>", start_move)
+    Settings_window_tilebar.bind("<ButtonRelease-1>", stop_move)
+    Settings_window_tilebar.bind("<B1-Motion>", on_motion)
 
 # Power Menu
 

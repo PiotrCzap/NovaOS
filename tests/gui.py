@@ -68,6 +68,9 @@ def Settings_panel():
     Settings_window = ctk.CTkFrame(root, width=800, height=600, fg_color="black")
     Settings_window_tilebar = ctk.CTkFrame(Settings_window, width=800, height=30, bg_color="gray", corner_radius=0)
     Settings_window_tilebar_title = ctk.CTkLabel(Settings_window_tilebar, text= "Settings")
+
+    Settings_options_panel = ctk.CTkFrame(Settings_window, width=100 , height=700, fg_color="gray")
+
     Settings_window_tilebar_close_button = ctk.CTkButton(
         master=Settings_window_tilebar,
         text="X", fg_color="red", bg_color="red", border_color="red",
@@ -79,6 +82,7 @@ def Settings_panel():
     Settings_window_tilebar.place(x=0, y=0)
     Settings_window_tilebar_close_button.place(x=775 , y=5)
     Settings_window_tilebar_title.place(x= 0, y=0)
+    Settings_options_panel.place(x=0, y=30)
     Settings_window_tilebar.bind("<Button-1>", start_move)
     Settings_window_tilebar.bind("<ButtonRelease-1>", stop_move)
     Settings_window_tilebar.bind("<B1-Motion>", on_motion)

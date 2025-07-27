@@ -85,7 +85,6 @@ def Settings_panel():
     Settings_window_tilebar.bind("<Button-1>", start_move)
     Settings_window_tilebar.bind("<ButtonRelease-1>", stop_move)
     Settings_window_tilebar.bind("<B1-Motion>", on_motion)
-    Settings_options_panel_system_button.pack(x=0, y=20)
 
 # Power Menu
 

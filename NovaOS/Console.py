@@ -4,6 +4,7 @@ import platform
 import os
 import shutil
 import time
+import subprocess
 
 games_console_packages = False
 
@@ -21,7 +22,12 @@ while True:
         print("nvo.install [any package] - packages installer")
         print("clear - Cleaning Console")
         print("exit - shutdowning system")
+        print("gui - start GUI")
         return
+
+    def gui():
+        print("gui")
+        
 
     def clear_command():
         os.system("cls")
@@ -92,3 +98,5 @@ while True:
         pass
     if console_input == "exit":
         break
+    if console_input == "gui":
+        gui()

@@ -26,7 +26,7 @@ start_menu_button = ctk.CTkButton(
     image=start_menu_image,
     width=5,
     height=5,
-    command=lambda: Settings_menu()
+    command=lambda: Start_Menu_Buttons()
 )
 start_menu_button.place(x=0, y=1)
 
@@ -85,6 +85,26 @@ def Settings_panel():
     Settings_window_tilebar.bind("<Button-1>", start_move)
     Settings_window_tilebar.bind("<ButtonRelease-1>", stop_move)
     Settings_window_tilebar.bind("<B1-Motion>", on_motion)
+
+def Start_Menu_Buttons():
+    Settings_menu()
+    Terminal_Button()
+
+def Terminal_Button():
+    Terminal_button_terminal = ctk.CTkButton(
+        master=root,
+        text="Terminal",
+        font=(system_font, 20),
+        compound="left",
+        width=200,
+        height=30
+    )
+    Terminal_button_terminal.place(x=0, y=60)
+
+def Terminal():
+    pass
+
+
 
 # Power Menu
 

@@ -1,0 +1,77 @@
+
+# System i bezpieczeństwo
+apparmor
+selinux-utils
+fail2ban
+auditd
+tcpdump
+wireshark
+
+# Zaawansowane narzędzia sieciowe
+ipset
+firewalld
+wireguard-tools
+openvpn
+dnsmasq
+bird
+quagga
+
+# Programowanie i debugowanie
+valgrind
+gdb
+strace
+ltrace
+clang
+llvm
+csmith
+cppcheck
+cppunit
+boost-dev
+protobuf-compiler
+clang-format
+clang-tidy
+
+# Grafika i multimedia
+imagemagick
+graphicsmagick
+gstreamer1.0-plugins-base
+gstreamer1.0-plugins-good
+gstreamer1.0-plugins-bad
+gstreamer1.0-plugins-ugly
+gstreamer1.0-libav
+pulseaudio
+jackd2
+alsa-utils
+ffmpegthumbnailer
+
+# Bazy danych i cache
+mongodb
+cassandra
+couchdb
+memcached
+elasticsearch
+rabbitmq-server
+kafka
+
+# Narzędzia developerskie i CI/CD
+docker.io
+podman
+kubectl
+ansible
+terraform
+jenkins
+git-lfs
+make-guile
+
+# Inne
+tesseract-ocr
+zbar-tools
+libreoffice
+texlive-full
+ghostscript
+cups
+avahi-daemon
+bluez
+pulseaudio-utils
+wmctrl
+xautomation

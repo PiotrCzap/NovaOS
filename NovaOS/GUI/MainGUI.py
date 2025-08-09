@@ -48,6 +48,14 @@ def Settings_menu():
     )
     settings_panel_button.place(x=0, y=30)
 
+
+
+def Settings_Menu_System_Menu():
+    pass
+
+
+
+
 def Settings_panel():
 
     def start_move(event):
@@ -77,6 +85,17 @@ def Settings_panel():
         height=10,
         command= Settings_window.destroy
     )
+
+    Settings_System_Menu_Button = ctk.CTkButton(
+        master=Settings_options_panel,
+        text="System",
+        width=100,
+        height=30,
+        corner_radius=0,
+        font=(system_font, 20),
+        fg_color="black", bg_color="black", border_color="black"
+    )
+
     Settings_window.place(x=200, y=200)
     Settings_window_tilebar.place(x=0, y=0)
     Settings_window_tilebar_close_button.place(x=775 , y=5)
@@ -85,6 +104,7 @@ def Settings_panel():
     Settings_window_tilebar.bind("<Button-1>", start_move)
     Settings_window_tilebar.bind("<ButtonRelease-1>", stop_move)
     Settings_window_tilebar.bind("<B1-Motion>", on_motion)
+    Settings_System_Menu_Button.place(x=0, y=0)
 
 def Start_Menu_Buttons():
     Settings_menu()

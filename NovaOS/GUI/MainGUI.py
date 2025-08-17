@@ -48,8 +48,6 @@ def Settings_menu():
     )
     settings_panel_button.place(x=0, y=30)
 
-
-
 def Settings_Menu_System_Menu():
     pass
 

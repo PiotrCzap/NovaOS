@@ -30,6 +30,8 @@ start_menu_button = ctk.CTkButton(
 )
 start_menu_button.place(x=0, y=1)
 
+# Settings ===========================================================================================================================
+
 
 # Settings Menu
 
@@ -104,10 +106,15 @@ def Settings_panel():
     Settings_window_tilebar.bind("<B1-Motion>", on_motion)
     Settings_System_Menu_Button.place(x=0, y=0)
 
+# ===========================================================================================================================
+
 def Start_Menu_Buttons():
     Settings_menu()
     Terminal_Button()
 
+# ===========================================================================================================================
+
+# Terminal ==================================================================================================================
 def Terminal_Button():
     Terminal_button_terminal = ctk.CTkButton(
         master=root,
@@ -115,14 +122,27 @@ def Terminal_Button():
         font=(system_font, 20),
         compound="left",
         width=200,
-        height=30
+        height=30,
+        command=lambda: Terminal_Window()
     )
     Terminal_button_terminal.place(x=0, y=60)
 
-def Terminal():
-    pass
+# ===========================================================================================================================
+
+# Terminal Window ===========================================================================================================
+
+def Terminal_Window():
+    Terminal_window = ctk.CTkFrame(root)
+    Terminal_window.title("Terminal")
+    Terminal_window.attributes("-topmost", True)
+    
+    Terminal_textbox = ctk.CTkTextbox(Terminal_window, width=780, height=550)
+    Terminal_textbox.insert("0.0", "NovaOS")
+    Terminal_textbox.pack(pady=20)
 
 
+
+# Power Menu ================================================================================================================
 
 # Power Menu
 
@@ -151,5 +171,7 @@ power_menu_button = ctk.CTkButton(
 )
 
 power_menu_button.place(x=1892, y=1)
+
+# ===========================================================================================================================
 
 root.mainloop()

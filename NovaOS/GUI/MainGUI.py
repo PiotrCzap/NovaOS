@@ -132,7 +132,7 @@ def Terminal_Button():
 # Terminal Window ===========================================================================================================
 
 def Terminal_Window():
-    Terminal_window = ctk.CTkFrame(root)
+    Terminal_window = ctk.CTkToplevel(root)
     Terminal_window.title("Terminal")
     Terminal_window.attributes("-topmost", True)
     

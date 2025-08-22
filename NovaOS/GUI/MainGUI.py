@@ -137,8 +137,13 @@ def Terminal_Window():
     Terminal_window.attributes("-topmost", True)
     
     Terminal_textbox = ctk.CTkTextbox(Terminal_window, width=780, height=550)
-    Terminal_textbox.insert("0.0", "NovaOS")
+    Terminal_textbox.insert("0.0", "user@NovaOS:~$ ")
+    Terminal_textbox.get("0.0", "end")
+    Terminal_textbox.insert("end", "elo")
     Terminal_textbox.pack(pady=20)
+
+
+
 
 
 

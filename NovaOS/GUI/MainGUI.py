@@ -1,5 +1,6 @@
 import customtkinter as ctk
 from PIL import Image
+import os
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
@@ -123,29 +124,11 @@ def Terminal_Button():
         compound="left",
         width=200,
         height=30,
-        command=lambda: Terminal_Window()
+        command= lambda: os.system("start cmd /k python System/root/bin/Applications/Terminal.py")
     )
     Terminal_button_terminal.place(x=0, y=60)
 
 # ===========================================================================================================================
-
-# Terminal Window ===========================================================================================================
-
-def Terminal_Window():
-    Terminal_window = ctk.CTkToplevel(root)
-    Terminal_window.title("Terminal")
-    Terminal_window.attributes("-topmost", True)
-    
-    Terminal_textbox = ctk.CTkTextbox(Terminal_window, width=780, height=550)
-    Terminal_textbox.insert("0.0", "user@NovaOS:~$ ")
-    Terminal_textbox.get("0.0", "end")
-    Terminal_textbox.insert("end", "elo")
-    Terminal_textbox.pack(pady=20)
-
-
-
-
-
 
 # Power Menu ================================================================================================================
 

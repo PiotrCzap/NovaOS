@@ -8,18 +8,18 @@
         * {
             box-sizing: border-box;
         }
-
+        
         body {
             background-color: #000;
             color: #fff;
             font-family: 'Segoe UI', Tahoma, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow-y: auto;
+            overflow-y: auto; 
             min-height: 100vh;
         }
 
-        /* SEKTA GÓRNA (HERO) */
+        /* GÓRNY GRADIENT */
         .hero {
             background: linear-gradient(135deg, #6e00ff 0%, #006aff 50%, #00ccff 100%);
             padding: 60px;
@@ -36,7 +36,7 @@
             margin-bottom: 50px;
         }
 
-        /* NAPIS NOVA OS Z CIENIEM (ZGODNIE Z image_2d886d.png) */
+        /* TYTUŁ Z DROP SHADOW */
         .hero-content h1 {
             font-size: clamp(60px, 10vw, 120px);
             margin: 0;
@@ -55,7 +55,7 @@
             font-weight: 600;
         }
 
-        /* PRZYCISKI Z ANIMACJAMI */
+        /* PRZYCISKI */
         .btn-pill, .btn-main-download {
             background: #00d2ff;
             color: white;
@@ -77,10 +77,8 @@
             border-radius: 15px;
             font-size: 1.6em;
             display: inline-block;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
-        /* EFEKTY HOVER */
         .btn-pill:hover, .btn-main-download:hover {
             transform: scale(1.07);
             background: #33e0ff;
@@ -91,7 +89,7 @@
         .features-section {
             padding: 60px;
             background-color: #000;
-            padding-bottom: 120px;
+            padding-bottom: 120px; 
         }
 
         .features-border-box {
@@ -110,7 +108,7 @@
             font-weight: 800;
         }
 
-        /* GRID DLA KAFELKÓW */
+        /* KAFELKI Z NOWYMI RAMKAMI (ZGODNIE Z image_2c9b51.png) */
         .grid-container {
             flex: 2;
             display: grid;
@@ -121,13 +119,15 @@
         .card {
             background: #111;
             padding: 20px;
-            border-radius: 4px;
-            transition: 0.3s;
+            border-radius: 8px; /* Zaokrąglone jak na screenie */
+            border: 2px solid #6e00ff; /* FIOLETOWE RAMKI KAFELKÓW */
+            transition: 0.3s ease;
         }
 
         .card:hover {
             background: #181818;
-            transform: translateY(-3px);
+            border-color: #00d2ff; /* Zmiana na błękit przy najechaniu */
+            transform: translateY(-5px);
         }
 
         .card h3 {
@@ -144,15 +144,14 @@
             font-size: 0.95em;
             color: #ddd;
             line-height: 1.4;
-            font-weight: 500;
         }
 
-        /* Pasek przewijania */
+        /* SCROLLBAR */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(#7000ff, #00d2ff);
-            border-radius: 5px;
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(#7000ff, #00d2ff); 
+            border-radius: 5px; 
         }
     </style>
 </head>
@@ -163,7 +162,7 @@
             <button class="btn-pill">Info</button>
             <button class="btn-pill">Download</button>
         </nav>
-
+        
         <div class="hero-content">
             <h1>NOVA OS</h1>
             <p>NovaOS perfect for you new iconic style interface<br>
@@ -176,7 +175,7 @@
     <main class="features-section">
         <div class="features-border-box">
             <h2 class="features-title">Features</h2>
-
+            
             <div class="grid-container">
                 <div class="card">
                     <h3>Drivers</h3>
@@ -194,7 +193,6 @@
                     <h3>Fast and Powerful</h3>
                     <p>You want fast install Any App? use NPM - Nova Package Manager One Click and you install your app</p>
                 </div>
-                <!-- NOWA KARTA Z TWOJEGO SCREENA -->
                 <div class="card">
                     <h3>Pre-installed Apps</h3>
                     <p>Wine, Google Chrome or Any Other Browser you can choose in installer what apps you want to pre-install</p>

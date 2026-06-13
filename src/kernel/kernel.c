@@ -2,6 +2,7 @@
 #include "../drivers/display/display.h"
 #include "../drivers/keyboard/keyboard.h"
 #include "terminal/terminal.h"
+#include "memory.h"
 
 char sys_ver[] = "0.0.1";
 
@@ -16,14 +17,18 @@ struct kernel
 
 void create_config_file(char config_filename[])
 {
-    FILE *KERNEL_CONFIG_FILE = fopen(config_filename, "w");
+    char full_path[64];
+
+    sprintf(full_path, "logs/%s", config_filename);
+
+    FILE *KERNEL_CONFIG_FILE = fopen(full_path, "w");
 
     if (KERNEL_CONFIG_FILE != NULL)
     {
         strcpy(kernel.version, "kernel-version 0.0.1");
         fprintf(KERNEL_CONFIG_FILE, "%s\n", kernel.version);
+        fclose(KERNEL_CONFIG_FILE);
     }
-    fclose(KERNEL_CONFIG_FILE);
 }
 
 void create_log_file(char log_filename[])
@@ -33,6 +38,7 @@ void create_log_file(char log_filename[])
     if (LOG_FILE != NULL)
     {
         fprintf(LOG_FILE, "%s\n", sys_ver);
+        fclose(LOG_FILE);
     }
     
 }
@@ -54,12 +60,8 @@ void init()
     write_text(0, 1, WHITE "Version: ");
     write_text(0, 0, sys_ver);
     init_terminal();
-    write_text(0, 1, RED "CZERWONY TEKST");
-    write_text(0, 1, GREEN "ZIELONY TEKST");
-    write_text(0, 1, YELLOW "ŻÓŁTY TEKST");
-    write_text(0, 1, ORANGE "POMARAŃCZOWY TEKST");
-    write_text(0, 1, BLUE "NIEBIESKI TEKST");
-    write_text(0, 1, WHITE "BIAŁY TEKST");
+    init_ram_disk_allocate();
+    
 }
 
 

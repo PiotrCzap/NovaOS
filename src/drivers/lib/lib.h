@@ -9,5 +9,6 @@
 #include <sys/stat.h>
 #include <string.h>
 #include <sys/types.h>
+#include <sys/mount.h>
 
 #endif

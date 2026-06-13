@@ -18,7 +18,7 @@ if (strcmp(command, "clear") == 0 || strcmp(command, "Clear") == 0)
 }
 if (strcmp(command, "mkfile") == 0 || strcmp(command, "Mkfile") == 0)
 {
-    write_text(0, 1, "ENTER FILENAME WITH EXTENSION: ");
+    write_text(0, 0, "ENTER FILENAME WITH EXTENSION: ");
     
     char FILENAME[32];
 
@@ -40,6 +40,28 @@ if (strcmp(command, "mkfile") == 0 || strcmp(command, "Mkfile") == 0)
     else
     {
         write_text(0, 0, "Error cannot create file");
+    }
+}
+if (strcmp(command, "mkdir") == 0 || strcmp(command, "Mkdir") == 0)
+{
+    write_text(0, 0, "ENTER FOLDER NAME: ");
+
+    char DIRNAME[32];
+
+    fgets(DIRNAME, 32, stdin);
+
+    size_t len = strlen(DIRNAME);
+    if (len > 0 && DIRNAME[len - 1] == '\n') {
+        DIRNAME[len - 1] = '\0';
+    }
+
+    if (mkdir(DIRNAME, 0777) == 0)
+    {
+        write_text(0, 0, "Directory Created");
+    }
+    else
+    {
+        write_text(0, 0, "Error cannot create directory");
     }
 }
 

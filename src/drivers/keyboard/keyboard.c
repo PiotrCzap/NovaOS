@@ -1,6 +1,6 @@
-#include "../../drivers/lib/lib.h"
-#include "../../drivers/display/display.h"
-#include "../../terminal/terminal.h"
+#include "../lib/lib.h"
+#include "../display/display.h"
+#include "../../kernel/terminal/terminal.h"
 
 static int max_chars = 128;
 

@@ -1,6 +1,6 @@
-#include "drivers/lib/lib.h"
-#include "drivers/display/display.h"
-#include "drivers/keyboard/keyboard.h"
+#include "../drivers/lib/lib.h"
+#include "../drivers/display/display.h"
+#include "../drivers/keyboard/keyboard.h"
 #include "terminal/terminal.h"
 
 char sys_ver[] = "0.0.1";

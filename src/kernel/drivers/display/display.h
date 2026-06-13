@@ -1,0 +1,18 @@
+#ifndef DISPLAY_H
+#define DISPLAY_H
+
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define YELLOW "\033[38;2;255;255;0m"
+#define ORANGE "\033[38;2;255;165;0m"
+#define BLUE "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN "\033[36m"
+#define WHITE "\033[37m"
+
+void write_text(int x, int y, char text[]);
+void clear();
+void timer(float time);
+
+#endif

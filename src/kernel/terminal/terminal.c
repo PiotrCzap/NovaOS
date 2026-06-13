@@ -18,8 +18,31 @@ if (strcmp(command, "clear") == 0 || strcmp(command, "Clear") == 0)
 }
 if (strcmp(command, "mkfile") == 0 || strcmp(command, "Mkfile") == 0)
 {
-    write_text(0, 1, "ENTER FILENAME WITH EXTENSION");
+    write_text(0, 1, "ENTER FILENAME WITH EXTENSION: ");
     
+    char FILENAME[32];
+
+    // 1. Pobieramy nazwę pliku prosto ze standardowego wejścia (klawiatury)
+    fgets(FILENAME, 32, stdin);
+
+    // 2. Usuwamy znak nowej linii '\n', który dodaje klawisz Enter
+    size_t len = strlen(FILENAME);
+    if (len > 0 && FILENAME[len - 1] == '\n') {
+        FILENAME[len - 1] = '\0';
+    }
+
+    // 3. Otwieramy i tworzymy plik o podanej nazwie
+    FILE *new_file = fopen(FILENAME, "w");
+    
+    if (new_file != NULL)
+    {
+        write_text(0, 2, "File Created");
+        fclose(new_file);
+    }
+    else
+    {
+        write_text(0, 2, "Error cannot create file");
+    }
 }
 
 

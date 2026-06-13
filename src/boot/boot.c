@@ -1,6 +1,6 @@
-#include "../drivers/lib/lib.h"
-#include "../drivers/display/display.h"
-#include "../kernel.h"
+#include "../kernel/drivers/lib/lib.h"
+#include "../kernel/drivers/display/display.h"
+#include "../kernel/kernel.h"
 
 int status;
 

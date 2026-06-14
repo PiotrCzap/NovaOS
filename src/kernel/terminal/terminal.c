@@ -3,20 +3,23 @@
 #include "../../drivers/keyboard/keyboard.h"
 #include "../kernel.h"
 
-void *init_commands(char command[])
+static void help_cmd()
 {
-    
-if (strcmp(command, "about") == 0 || strcmp(command, "About") == 0)
-{
-    write_text(0, 0, "OS: NovaOS");
-    write_text(0, 1, "Version: 0.0.1");
-    write_text(0, 2, "Kernel: Nova_Kernel-v0.0.1");
+    write_text(0, 0, GREEN "Help "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "prints all system commands");
+    write_text(0, 1, GREEN "About "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "prints all information about your pc");
+    write_text(0, 1, GREEN "Clear "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "cleans terminal");
+    write_text(0, 1, GREEN "Mkfile "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "creates new file");
+    write_text(0, 1, GREEN "Mkdir "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "creates new folder");
+    write_text(0, 0, WHITE "");
 }
-if (strcmp(command, "clear") == 0 || strcmp(command, "Clear") == 0)
+
+static void about_cmd()
 {
-    clear();
+    write_text(0, 0, GREEN "OS:"); write_text(1, 0, WHITE "NovaOS v0.0.1");
+    write_text(0, 1, GREEN "Kernel:"); write_text(1, 0, WHITE "NovaOS Kernel v0.0.1");
 }
-if (strcmp(command, "mkfile") == 0 || strcmp(command, "Mkfile") == 0)
+
+static void mkfile_cmd()
 {
     write_text(0, 0, "ENTER FILENAME WITH EXTENSION: ");
     
@@ -34,15 +37,16 @@ if (strcmp(command, "mkfile") == 0 || strcmp(command, "Mkfile") == 0)
     
     if (new_file != NULL)
     {
-        write_text(0, 0, "File Created");
+        write_text(0, 0, GREEN "File Created");
         fclose(new_file);
     }
     else
     {
-        write_text(0, 0, "Error cannot create file");
+        write_text(0, 0, RED "Error cannot create file");
     }
 }
-if (strcmp(command, "mkdir") == 0 || strcmp(command, "Mkdir") == 0)
+
+static void mkdir_cmd()
 {
     write_text(0, 0, "ENTER FOLDER NAME: ");
 
@@ -57,14 +61,41 @@ if (strcmp(command, "mkdir") == 0 || strcmp(command, "Mkdir") == 0)
 
     if (mkdir(DIRNAME, 0777) == 0)
     {
-        write_text(0, 0, "Directory Created");
+        write_text(0, 0, GREEN "Directory Created");
     }
     else
     {
-        write_text(0, 0, "Error cannot create directory");
+        write_text(0, 0, RED "Error cannot create directory");
     }
 }
 
+void *init_commands(char command[])
+{
+    
+if (strcmp(command, "about") == 0 || strcmp(command, "About") == 0)
+{
+    about_cmd();
+}
+
+if (strcmp(command, "clear") == 0 || strcmp(command, "Clear") == 0)
+{
+    clear();
+}
+
+if (strcmp(command, "mkfile") == 0 || strcmp(command, "Mkfile") == 0)
+{
+    mkfile_cmd();
+}
+
+if (strcmp(command, "mkdir") == 0 || strcmp(command, "Mkdir") == 0)
+{
+    mkdir_cmd();
+}
+
+if (strcmp(command, "help") == 0 || strcmp(command, "Help") == 0)
+{
+    help_cmd();
+}
 
 }
 

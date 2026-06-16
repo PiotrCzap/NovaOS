@@ -5,11 +5,11 @@
 
 void help_cmd()
 {
-    write_text(0, 0, GREEN "Help "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "prints all system commands");
-    write_text(0, 1, GREEN "About "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "prints all information about your pc");
-    write_text(0, 1, GREEN "Clear "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "cleans terminal");
-    write_text(0, 1, GREEN "Mkfile "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "creates new file");
-    write_text(0, 1, GREEN "Mkdir "); write_text(1, 0, RED "-> ");  write_text(1, 0, BLUE "creates new folder");
+    write_text(0, 0, GREEN "Help"); write_text(1, 0, RED "->");  write_text(1, 0, BLUE "prints all system commands");
+    write_text(0, 1, GREEN "About"); write_text(1, 0, RED "->");  write_text(1, 0, BLUE "prints all information about your pc");
+    write_text(0, 1, GREEN "Clear"); write_text(1, 0, RED "->");  write_text(1, 0, BLUE "cleans terminal");
+    write_text(0, 1, GREEN "Mkfile"); write_text(1, 0, RED "->");  write_text(1, 0, BLUE "creates new file");
+    write_text(0, 1, GREEN "Mkdir"); write_text(1, 0, RED "->");  write_text(1, 0, BLUE "creates new folder");
     write_text(0, 0, WHITE "");
 }
 
@@ -38,11 +38,13 @@ void mkfile_cmd()
     if (new_file != NULL)
     {
         write_text(0, 0, GREEN "File Created");
+        write_text(0, 0, WHITE "");
         fclose(new_file);
     }
     else
     {
         write_text(0, 0, RED "Error cannot create file");
+        write_text(0, 0, WHITE "");
     }
 }
 
@@ -62,9 +64,11 @@ void mkdir_cmd()
     if (mkdir(DIRNAME, 0777) == 0)
     {
         write_text(0, 0, GREEN "Directory Created");
+        write_text(0, 0, WHITE "");
     }
     else
     {
         write_text(0, 0, RED "Error cannot create directory");
+        write_text(0, 0, WHITE "");
     }
 }

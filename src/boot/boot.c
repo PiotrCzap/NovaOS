@@ -20,7 +20,6 @@ void init_boot()
     timer(1);
 
     write_text(1, 1, "Loading Kernel");
-    create_config_file("kernel.init");
     status = 1;
 
     if (status == 1) 

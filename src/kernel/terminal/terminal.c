@@ -7,27 +7,27 @@
 void *init_commands(char command[])
 {
     
-if (strcmp(command, "about") == 0 || strcmp(command, "About") == 0)
+if (strcmp(command, "about") == 0)
 {
     about_cmd();
 }
 
-if (strcmp(command, "clear") == 0 || strcmp(command, "Clear") == 0)
+if (strcmp(command, "clear") == 0)
 {
     clear();
 }
 
-if (strcmp(command, "mkfile") == 0 || strcmp(command, "Mkfile") == 0)
+if (strcmp(command, "mkfile") == 0)
 {
     mkfile_cmd();
 }
 
-if (strcmp(command, "mkdir") == 0 || strcmp(command, "Mkdir") == 0)
+if (strcmp(command, "mkdir") == 0)
 {
     mkdir_cmd();
 }
 
-if (strcmp(command, "help") == 0 || strcmp(command, "Help") == 0)
+if (strcmp(command, "help") == 0)
 {
     help_cmd();
 }

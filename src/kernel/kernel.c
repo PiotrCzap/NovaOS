@@ -12,7 +12,7 @@ void init()
     write_text(0, 1, WHITE "Version: ");
     write_text(0, 0, sys_ver);
     init_terminal();
-    init_ram_disk_allocate();
+    init_ram_disk_allocate("plik.txt");
     
 }
 

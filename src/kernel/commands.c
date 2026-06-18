@@ -2,6 +2,7 @@
 #include "../drivers/lib/lib.h"
 #include "../drivers/keyboard/keyboard.h"
 #include "../drivers/display/display.h"
+#include "memory.h"
 
 void help_cmd()
 {

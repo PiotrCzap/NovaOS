@@ -20,7 +20,6 @@ time.sleep(1)
 
 print("Downloading System Resources...")
 
-# Link i nazwa tymczasowego pliku
 url = "https://github.com/PiotrCzap/NovaOS/releases/download/Development/NovaOS.tar.gz"
 archive_name = "NovaOS.tar.gz"
 

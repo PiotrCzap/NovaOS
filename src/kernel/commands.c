@@ -73,3 +73,11 @@ void mkdir_cmd()
         write_text(0, 0, WHITE "");
     }
 }
+
+void ls_cmd()
+{
+    char root_folder[] = "root";
+    char command[128];
+    snprintf(command, sizeof(command), "ls %s", root_folder);
+    system(command);
+}

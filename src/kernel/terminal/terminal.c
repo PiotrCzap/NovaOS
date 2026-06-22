@@ -35,6 +35,7 @@ if (strcmp(command, "ls") == 0)
 {
     ls_cmd();
 }
+
 if (strcmp(command, "mov") == 0)
 {
     mov_cmd();

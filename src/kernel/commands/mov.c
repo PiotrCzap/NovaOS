@@ -31,7 +31,7 @@ void mov_cmd()
         len--;
     }
 
-    snprintf(full_command, sizeof(full_command), "mv \"%s\" \"%s\"", source, objective);
+    snprintf(full_command, sizeof(full_command), "mv \"%s\" \"%s\" 2>/dev/null", source, objective);
 
     int wynik = system(full_command);
     if (wynik == 0) {
@@ -39,5 +39,6 @@ void mov_cmd()
         printf(WHITE "");
     } else {
         printf(RED "Error: mov failed to execute.\n");
+        printf(WHITE "");
     }
 }

@@ -7,5 +7,6 @@ void mkfile_cmd();
 void mkdir_cmd();
 void ls_cmd();
 void mov_cmd();
+void clear();
 
 #endif

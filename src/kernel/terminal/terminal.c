@@ -1,8 +1,8 @@
 #include "../../drivers/display/display.h"
-#include "../../drivers/lib/lib.h"
+#include "../../drivers/lib.h"
 #include "../../drivers/keyboard/keyboard.h"
 #include "../kernel.h"
-#include "../commands.h"
+#include "../commands/commands.h"
 
 void *init_commands(char command[])
 {
@@ -30,6 +30,14 @@ if (strcmp(command, "mkdir") == 0)
 if (strcmp(command, "help") == 0)
 {
     help_cmd();
+}
+if (strcmp(command, "ls") == 0)
+{
+    ls_cmd();
+}
+if (strcmp(command, "mov") == 0)
+{
+    mov_cmd();
 }
 
 }

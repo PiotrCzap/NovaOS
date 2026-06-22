@@ -1,18 +1,13 @@
-#include "../drivers/lib/lib.h"
+#include "../drivers/lib.h"
 #include "../drivers/display/display.h"
-#include "../drivers/keyboard/keyboard.h"
+#include "commands/commands.h"
 #include "terminal/terminal.h"
-#include "memory.h"
 
-char sys_ver[] = "0.0.1"; // wersja systemu
+char system_version[] = "0.0.1"; // zmienna wersji systemu
 
 void init()
 {
-    write_text(0, 0, WHITE "Welcome in NovaOS");
-    write_text(0, 1, WHITE "Version: ");
-    write_text(0, 0, sys_ver);
-    init_ram_disk_allocate("plik.txt");
+    printf("Welcome in NovaOS!\n");
+    printf("Version: %s\n", system_version);
     init_terminal();
 }
-
-

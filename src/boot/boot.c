@@ -1,42 +1,20 @@
-#include "../drivers/lib/lib.h"
+#include "../drivers/lib.h"
 #include "../drivers/display/display.h"
 #include "../kernel/kernel.h"
 
-int status;
-
 void init_boot()
 {
-    clear();
-
-    write_text(0, 0, "Loading Drivers");
-
-    timer(1);
-
-    write_text(0, 1, "Loading Drivers");
-    write_text(1, 0, "[");
-    write_text(1, 0, GREEN "OK");
-    write_text(1, 0, WHITE "]");
-
-    timer(1);
-
-    write_text(1, 1, "Loading Kernel");
-    status = 1;
-
-    if (status == 1) 
-    {
-        status = 0;
-    }
-
-    write_text(0, 1, "Loading Kernel");
-    write_text(1, 0, "[");
-    write_text(1, 0, GREEN "OK");
-    write_text(1, 0, WHITE "]");
-
-    timer(1);
-    clear();
-
+    printf("Loading Drivers...\n");
+    printf("Loading Drivers [ " GREEN "OK" WHITE " ]\n");
+    printf("Loading Kernel...\n");
+    printf("Loading Kernel [ " GREEN "OK" WHITE " ]\n");
+    printf("Loading Terminal...\n");
+    printf("Loading Terminal [ " GREEN "OK" WHITE " ]\n");
+    system("clear");
     init();
 }
+
+
 
 
 int main()

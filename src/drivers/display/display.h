@@ -1,6 +1,8 @@
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
+// Colors
+
 #define RESET "\033[0m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
@@ -11,7 +13,6 @@
 #define CYAN "\033[36m"
 #define WHITE "\033[37m"
 
-void write_text(int x, int y, char text[]);
 void clear();
 void timer(float time);
 

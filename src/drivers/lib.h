@@ -10,6 +10,5 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/mount.h>
-#include <dirent.h>
 
 #endif

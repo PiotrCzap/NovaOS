@@ -3,5 +3,4 @@
 
 void init_boot();
 
-
-#endif;
+#endif

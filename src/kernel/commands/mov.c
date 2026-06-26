@@ -33,12 +33,12 @@ void mov_cmd()
 
     snprintf(full_command, sizeof(full_command), "mv \"%s\" \"%s\" 2>/dev/null", source, objective);
 
-    int wynik = system(full_command);
-    if (wynik == 0) {
+    int score = system(full_command);
+    if (score == 0) {
         printf(GREEN "Success!\n");
         printf(WHITE "");
     } else {
-        printf(RED "Error: mov failed to execute.\n");
+        printf(RED "Error: mov failed to execute\n");
         printf(WHITE "");
     }
 }

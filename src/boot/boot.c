@@ -6,17 +6,17 @@
 void init_boot()
 {
     printf("Loading Drivers...\n");
-    timer(1);
+    timer(0.5);
     printf("Loading Drivers [ " GREEN "OK" WHITE " ]\n");
-    timer(1);
+    timer(0.5);
     printf("Loading Kernel...\n");
-    timer(1);
+    timer(0.5);
     printf("Loading Kernel [ " GREEN "OK" WHITE " ]\n");
-    timer(1);
+    timer(0.5);
     printf("Loading Terminal...\n");
-    timer(1);
+    timer(0.5);
     printf("Loading Terminal [ " GREEN "OK" WHITE " ]\n");
-    timer(1);
+    timer(0.5);
     system("clear");
     init();
 }

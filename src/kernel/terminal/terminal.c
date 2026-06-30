@@ -56,6 +56,11 @@ if (strcmp(command, "rem -R") == 0)
 {
     rem_with_flag_R();
 }
+if (strcmp(command, "read") == 0)
+{
+    read_cmd();
+}
+
 
 }
 

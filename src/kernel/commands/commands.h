@@ -12,5 +12,6 @@ void run_cmd();
 void copy_cmd();
 void rem_cmd();
 void rem_with_flag_R();
+void read_cmd();
 
 #endif

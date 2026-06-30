@@ -13,4 +13,5 @@ void help_cmd()
     printf(GREEN "mkdir" RED " -> " BLUE "creates new folder" RESET "\n");
     printf(GREEN "ls" RED " -> " BLUE "lists all files and folders" RESET "\n");
     printf(GREEN "mov" RED " -> " BLUE "moves files or folders to other path or disk" RESET "\n");
+    printf(GREEN "run" RED " -> " BLUE "runs executable files like .exe" RESET "\n");
 }

@@ -40,6 +40,10 @@ if (strcmp(command, "mov") == 0)
 {
     mov_cmd();
 }
+if (strcmp(command, "run") == 0)
+{
+    run_cmd();
+}
 
 }
 

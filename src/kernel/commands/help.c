@@ -16,5 +16,5 @@ void help_cmd()
     printf(GREEN "run" RED " -> " BLUE "runs executable files like .exe" RESET "\n");
     printf(GREEN "rem" RED " -> " BLUE "removes file" RESET "\n");
     printf(GREEN "rem -R" RED " -> " BLUE "removes folder and files on this folder" RESET "\n");
-    printf(GREEN "read -R" RED " -> " BLUE "reads files like .txt" RESET "\n");
+    printf(GREEN "read" RED " -> " BLUE "reads files like .txt" RESET "\n");
 }

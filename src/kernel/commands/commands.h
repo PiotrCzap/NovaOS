@@ -9,5 +9,6 @@ void ls_cmd();
 void mov_cmd();
 void clear();
 void run_cmd();
+void copy_cmd();
 
 #endif

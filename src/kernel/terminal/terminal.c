@@ -44,6 +44,10 @@ if (strcmp(command, "run") == 0)
 {
     run_cmd();
 }
+if (strcmp(command, "copy") == 0)
+{
+    copy_cmd();
+}
 
 }
 

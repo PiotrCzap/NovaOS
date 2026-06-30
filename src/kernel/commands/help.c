@@ -14,4 +14,6 @@ void help_cmd()
     printf(GREEN "ls" RED " -> " BLUE "lists all files and folders" RESET "\n");
     printf(GREEN "mov" RED " -> " BLUE "moves files or folders to other path or disk" RESET "\n");
     printf(GREEN "run" RED " -> " BLUE "runs executable files like .exe" RESET "\n");
+    printf(GREEN "rem" RED " -> " BLUE "removes file" RESET "\n");
+    printf(GREEN "rem -R" RED " -> " BLUE "removes folder and files on this folder" RESET "\n");
 }

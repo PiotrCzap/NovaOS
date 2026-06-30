@@ -48,6 +48,14 @@ if (strcmp(command, "copy") == 0)
 {
     copy_cmd();
 }
+if (strcmp(command, "rem") == 0)
+{
+    rem_cmd();
+}
+if (strcmp(command, "rem -R") == 0)
+{
+    rem_with_flag_R();
+}
 
 }
 

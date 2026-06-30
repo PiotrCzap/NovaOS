@@ -10,5 +10,7 @@ void mov_cmd();
 void clear();
 void run_cmd();
 void copy_cmd();
+void rem_cmd();
+void rem_with_flag_R();
 
 #endif

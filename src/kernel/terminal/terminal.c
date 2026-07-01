@@ -60,7 +60,10 @@ if (strcmp(command, "read") == 0)
 {
     read_cmd();
 }
-
+if (strcmp(command, "ping") == 0)
+{
+    ping_cmd();
+}
 
 }
 

@@ -4,7 +4,7 @@
 #include "../kernel.h"
 #include "commands.h"
 
-void print_gpu()
+static void print_gpu()
 {
     FILE *fp;
     char gpu_name[128] = "Nieznane GPU";
@@ -53,7 +53,7 @@ void print_gpu()
     printf(WHITE " VRAM: %d GB\n", vram_gb);
 }
 
-void print_ram()
+static void print_ram()
 {
     struct sysinfo info;
 

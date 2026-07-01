@@ -13,5 +13,6 @@ void copy_cmd();
 void rem_cmd();
 void rem_with_flag_R();
 void read_cmd();
+void ping_cmd();
 
 #endif

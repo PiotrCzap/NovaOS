@@ -8,7 +8,7 @@ void mkfile_cmd()
 {
     printf("ENTER FILENAME WITH EXTENSION: ");
     
-    char FILENAME[32];
+    char *FILENAME[32];
     fgets(FILENAME, 32, stdin);
 
     size_t len = strlen(FILENAME);

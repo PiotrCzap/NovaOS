@@ -8,7 +8,7 @@ void mkdir_cmd()
 {
     printf("ENTER FOLDER NAME: ");
 
-    char DIRNAME[32];
+    char *DIRNAME[32];
     fgets(DIRNAME, 32, stdin);
 
     size_t len = strlen(DIRNAME);

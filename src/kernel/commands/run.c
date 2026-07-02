@@ -7,7 +7,7 @@
 void run_cmd()
 {
     printf("type path to exectuable file: ");
-    char path_input[128];
+    char *path_input[128];
 
     fgets(path_input, sizeof(path_input), stdin);
     system(path_input);

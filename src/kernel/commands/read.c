@@ -5,10 +5,9 @@
 #include "commands.h"
 
 void read_cmd() {
-    // Zmieniamy komunikat, aby użytkownik wiedział, czego oczekujesz
     printf("path or filename to file: ");
     
-    char PATH[128];
+    char *PATH[128];
     fgets(PATH, 128, stdin);
 
     size_t len = strlen(PATH);
@@ -16,7 +15,7 @@ void read_cmd() {
         PATH[len - 1] = '\0';
     }
 
-    char cmd[256];
+    char *cmd[256];
     sprintf(cmd, "cat \"%s\"", PATH);
 
     int result = system(cmd);

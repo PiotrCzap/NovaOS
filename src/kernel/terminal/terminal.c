@@ -64,6 +64,10 @@ if (strcmp(command, "ping") == 0)
 {
     ping_cmd();
 }
+if (strcmp(command, "cd") == 0)
+{
+    cd_cmd();
+}
 
 }
 
